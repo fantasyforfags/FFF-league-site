@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantasy for Fags – League Constitution</title>
+    <style>
+        :root {
+            --bg: #050815;
+            --bg-card: #111827;
+            --bg-card-soft: #0b1220;
+            --accent: #3b82f6;
+            --accent-soft: rgba(59,130,246,0.25);
+            --accent-strong: #60a5fa;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+            --border-subtle: #1f2937;
+            --danger: #f97373;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1f2937 0, #020617 50%, #000000 100%);
+            color: var(--text-main);
+        }
+
+        .page {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 16px 40px;
+        }
+
+        .header-card {
+            background: linear-gradient(135deg, #020617 0%, #0b1120 40%, #111827 100%);
+            border-radius: 20px;
+            padding: 18px 20px;
+            border: 1px solid rgba(148,163,184,0.35);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logo-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            background: radial-gradient(circle at 30% 20%, #ffffff 0, #e5e7eb 22%, #111827 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo-wrap img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        .header-text-main {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
+        }
+
+        .league-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(15,23,42,0.9);
+            border-radius: 999px;
+            padding: 3px 10px;
+            border: 1px solid rgba(148,163,184,0.5);
+            color: var(--text-muted);
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .league-tag-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 999px;
+            background: #22c55e;
+            box-shadow: 0 0 10px rgba(34,197,94,0.8);
+        }
+
+        .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: baseline;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: clamp(26px, 4vw, 32px);
+            letter-spacing: 0.09em;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .chip-row {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.5);
+            color: var(--text-muted);
+        }
+
+        .chip.accent {
+            border-color: var(--accent-soft);
+            background: rgba(37,99,235,0.15);
+            color: var(--accent-strong);
+        }
+
+        .download-wrap {
+            margin-left: auto;
+            text-align: right;
+            min-width: 210px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(148,163,184,0.6);
+            background: radial-gradient(circle at top left, rgba(59,130,246,0.25), rgba(15,23,42,0.95));
+            color: #f9fafb;
+            font-size: 13px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(15,23,42,0.8);
+            margin-bottom: 6px;
+        }
+
+        .download-btn.secondary {
+            background: rgba(15,23,42,0.95);
+        }
+
+        .download-btn span.icon {
+            font-size: 16px;
+        }
+
+        .download-hint {
+            margin-top: 0;
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 720px) {
+            .header-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .download-wrap {
+                margin-left: 0;
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        .layout {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+            gap: 18px;
+        }
+
+        @media (max-width: 880px) {
+            .layout {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .sidebar {
+            background: var(--bg-card-soft);
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+            padding: 14px 14px 16px;
+            position: sticky;
+            top: 12px;
+            align-self: flex-start;
+        }
+
+        .side-title {
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .nav-list a {
+            display: block;
+            padding: 6px 9px;
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+
+        .nav-list a:hover {
+            border-color: var(--accent-soft);
+            background: rgba(15,23,42,0.9);
+            color: var(--accent-strong);
+        }
+
+        .main-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+            padding: 18px 18px 22px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.8);
+        }
+
+        .article {
+            border-left: 2px solid rgba(55,65,81,0.8);
+            padding-left: 13px;
+            margin-bottom: 18px;
+        }
+
+        .article h2 {
+            margin: 0 0 4px;
+            font-size: 17px;
+            color: var(--accent-strong);
+        }
+
+        .article-code {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .article p {
+            font-size: 13px;
+            color: var(--text-main);
+            margin: 4px 0 8px;
+        }
+
+        .muted {
+            color: var(--text-muted);
+        }
+
+        .footnote {
+            margin-top: 10px;
+            font-size: 11px;
+            color: var(--text-muted);
+            border-top: 1px dashed #374151;
+            padding-top: 10px;
+        }
+
+        a.inline-link {
+            color: var(--accent-strong);
+            text-decoration: none;
+        }
+
+        a.inline-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- HEADER -->
+    <div class="header-card">
+        <div class="logo-wrap">
+            <!-- Make sure you uploaded fff-logo.png into the repo root -->
+            <img src="fff-logo.png" alt="FFF League Logo" />
+        </div>
+        <div class="header-text-main">
+            <div class="league-tag">
+                <span class="league-tag-dot"></span>
+                FFF LEAGUE • EST. 2020
+            </div>
+            <div class="title-row">
+                <h1>FANTASY FOR FAGS</h1>
+            </div>
+            <p class="subtitle">
+                Official home of the FFF League Constitution – the law of the land for drafts, trades, tanking, punishments and everything in between.
+            </p>
+            <div class="chip-row">
+                <div class="chip accent">League Constitution</div>
+                <div class="chip">Anti-Gooning Policy</div>
+                <div class="chip">Rookie Rules</div>
+                <div class="chip">Last Place Punishments</div>
+            </div>
+        </div>
+        <div class="download-wrap">
+            <a class="download-btn" href="FFF_FULL_MASTER_CONSTITUTION_FULLTEXT.pdf" target="_blank">
+                <span class="icon">⬇️</span>
+                <span>Download Full Constitution (PDF)</span>
+            </a>
+            <p class="download-hint">Opens the full, signed master copy.</p>
+
+            <a class="download-btn secondary" href="hof.html">
+                <span class="icon">🏆</span>
+                <span>View Hall of Fame</span>
+            </a>
+            <p class="download-hint">See every champion since 2020.</p>
+        </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="layout">
+        <!-- SIDE NAV -->
+        <aside class="sidebar">
+            <div class="side-title">Jump to article</div>
+            <ul class="nav-list">
+                <li><a href="#art1">I – Purpose & Authority</a></li>
+                <li><a href="#art2">II – Definitions</a></li>
+                <li><a href="#art3">III – Membership</a></li>
+                <li><a href="#art4">IV – Commissioner & Governance</a></li>
+                <li><a href="#art5">V – Draft Administration</a></li>
+                <li><a href="#art6">VI – Trades</a></li>
+                <li><a href="#art7">VII – Payments & Finance</a></li>
+                <li><a href="#art8">VIII – Rookie Regulations</a></li>
+                <li><a href="#art9">IX – Lineups & Weekly Duties</a></li>
+                <li><a href="#art10">X – Waivers & Free Agency</a></li>
+                <li><a href="#art11">XI – Integrity & Last Place</a></li>
+                <li><a href="#art12">XII – Disputes & Amendments</a></li>
+                <li><a href="#art13">XIII – Certification</a></li>
+                <li><a href="hof.html">Hall of Fame</a></li>
+            </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-card">
+            <!-- These are short summaries; full legal text is in the PDF -->
+
+            <section class="article" id="art1">
+                <div class="article-code">ARTICLE I</div>
+                <h2>Purpose & Authority</h2>
+                <p><strong>1.1 (A–D)</strong> The FFF League exists to provide a structured, competitive, and entertaining fantasy football experience while preserving fairness, integrity, and maximum levels of degenerate fun. This Constitution is the supreme governing document and overrides random group chat “deals” or jokes.</p>
+                <p class="muted"><strong>TL;DR:</strong> This document is the law. Joining the league means you agree to this.</p>
+            </section>
+
+            <section class="article" id="art2">
+                <div class="article-code">ARTICLE II</div>
+                <h2>Definitions</h2>
+                <p><strong>2.1 (A–H)</strong> Defines key terms like “League,” “Member,” “Commissioner,” “Season,” “Rookie,” “Gooning” (shady draft manipulation), “Under-the-Table Trade” (real-life bribery), and “Last Place Punishment.”</p>
+                <p class="muted">If you’re confused about what something means, it’s probably defined here or in the PDF.</p>
+            </section>
+
+            <section class="article" id="art3">
+                <div class="article-code">ARTICLE III</div>
+                <h2>Membership</h2>
+                <p><strong>3.1–3.3</strong> Explains who can join, what counts as a Member in good standing (pay dues, agree to the Constitution, set lineups), and how someone can be removed for ghosting, sabotaging, or refusing punishments.</p>
+            </section>
+
+            <section class="article" id="art4">
+                <div class="article-code">ARTICLE IV</div>
+                <h2>Commissioner & Governance</h2>
+                <p><strong>4.1–4.3</strong> The Commissioner is the chief authority: interprets rules, enforces them, settles disputes, announces draft time, fees, and rule tweaks. A 2/3 vote of the league can overturn a ruling. Reasonable bias is tolerated; blatant cheating is not.</p>
+            </section>
+
+            <section class="article" id="art5">
+                <div class="article-code">ARTICLE V</div>
+                <h2>Draft Administration</h2>
+                <p><strong>5.1–5.4</strong> Covers when/where the draft happens, live vs remote drafting, drinking expectations, breathalyzer checks, and the hard rule: <strong>NO GOONING</strong>. If shady behavior is detected, the Commissioner can rewind picks, reverse trades, or penalize future draft position.</p>
+            </section>
+
+            <section class="article" id="art6">
+                <div class="article-code">ARTICLE VI</div>
+                <h2>Trades</h2>
+                <p><strong>6.1–6.4</strong> Trades must be clearly communicated, go through the platform, and can be reviewed or vetoed by the league. Suspicious, tanking, or obviously lopsided deals can be reversed. Under-the-table trades involving money, food, favors, etc., are banned and can get you disqualified and kicked from the league.</p>
+            </section>
+
+            <section class="article" id="art7">
+                <div class="article-code">ARTICLE VII</div>
+                <h2>Payments & Financial Regulations</h2>
+                <p><strong>7.1–7.3</strong> Buy-in amount and extra fees (rookie fee, trophy fund, etc.) are announced before the season. You must pay by draft time to be prize-eligible. Payout structure is set before Week 1. Non-payers can lose winnings, be banned, and get infinite “broke boy” slander.</p>
+            </section>
+
+            <section class="article" id="art8">
+                <div class="article-code">ARTICLE VIII</div>
+                <h2>Rookie Regulations</h2>
+                <p><strong>8.1–8.2</strong> A Rookie is anyone in their first season of the FFF League. The Commissioner can set rookie fees or reduced buy-ins. If a Rookie wins in their first year, they get only half of the normal champion payout; the other half rolls into next year’s pot. They still get full champion credit and trash-talk rights.</p>
+            </section>
+
+            <section class="article" id="art9">
+                <div class="article-code">ARTICLE IX</div>
+                <h2>Lineups & Weekly Obligations</h2>
+                <p><strong>9.1–9.2</strong> Every Member must set a reasonable lineup each week. If you abandon your team, the Commissioner can set it for you to keep things fair for your opponents. Repeat offenders can be fined, lose draft position, or be banned from future seasons.</p>
+            </section>
+
+            <section class="article" id="art10">
+                <div class="article-code">ARTICLE X</div>
+                <h2>Waivers & Free Agency</h2>
+                <p><strong>10.1–10.2</strong> The league uses the platform’s waiver system (rolling, FAAB, etc.) as chosen before the season. Coordinated “I’ll drop him so you can pick him up” moves are banned. Suspicious patterns can be investigated and reversed.</p>
+            </section>
+
+            <section class="article" id="art11">
+                <div class="article-code">ARTICLE XI</div>
+                <h2>Competitive Integrity & Last Place Punishment</h2>
+                <p><strong>11.1–11.3</strong> No tanking, no giving up because your team is cooked. Last place must complete the official punishment (embarrassing but not dangerous or illegal). Refusing the punishment = automatic removal and permanent clown status in league history.</p>
+            </section>
+
+            <section class="article" id="art12">
+                <div class="article-code">ARTICLE XII</div>
+                <h2>Disputes, Rule Changes & Amendments</h2>
+                <p><strong>12.1–12.2</strong> Disputes go to the Commissioner first and must be raised within the time limits (e.g., 48 hours or before stat corrections lock). Rule changes and amendments require at least a 2/3 majority and usually kick in starting next season.</p>
+            </section>
+
+            <section class="article" id="art13">
+                <div class="article-code">ARTICLE XIII</div>
+                <h2>Certification & Acceptance</h2>
+                <p><strong>13.1–13.2</strong> By drafting, paying, or playing, every Member accepts all terms and punishments in the Constitution. The PDF stored here counts as the official master copy, certified by the Commissioner.</p>
+                <p class="footnote">
+                    For the full, word-for-word legal version with all clauses and signatures, see the
+                    <a class="inline-link" href="FFF_FULL_MASTER_CONSTITUTION_FULLTEXT.pdf" target="_blank">official PDF constitution</a>.
+                </p>
+            </section>
+        </main>
+    </div>
+</div>
+</body>
+</html>
