@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FFF League Constitution</title>
+    <title>Fantasy for Fags – League Constitution</title>
     <style>
         :root {
             --bg: #050815;
@@ -69,6 +69,7 @@
             display: flex;
             flex-direction: column;
             gap: 4px;
+            flex: 1;
         }
 
         .league-tag {
@@ -136,13 +137,14 @@
         .download-wrap {
             margin-left: auto;
             text-align: right;
+            min-width: 210px;
         }
 
         .download-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 9px 16px;
+            padding: 8px 14px;
             border-radius: 999px;
             border: 1px solid rgba(148,163,184,0.6);
             background: radial-gradient(circle at top left, rgba(59,130,246,0.25), rgba(15,23,42,0.95));
@@ -151,6 +153,11 @@
             text-decoration: none;
             font-weight: 500;
             box-shadow: 0 10px 30px rgba(15,23,42,0.8);
+            margin-bottom: 6px;
+        }
+
+        .download-btn.secondary {
+            background: rgba(15,23,42,0.95);
         }
 
         .download-btn span.icon {
@@ -158,7 +165,7 @@
         }
 
         .download-hint {
-            margin-top: 4px;
+            margin-top: 0;
             font-size: 11px;
             color: var(--text-muted);
         }
@@ -298,19 +305,19 @@
         <div class="header-text-main">
             <div class="league-tag">
                 <span class="league-tag-dot"></span>
-                FFF LEAGUE • EST. 20XX
+                FFF LEAGUE • EST. 2020
             </div>
             <div class="title-row">
-                <h1>LEAGUE CONSTITUTION</h1>
+                <h1>FANTASY FOR FAGS</h1>
             </div>
             <p class="subtitle">
-                The official governing document of the Fantasy for Fags League – covering membership, money, trades, punishments, and all degeneracy in between.
+                Official home of the FFF League Constitution – the law of the land for drafts, trades, tanking, punishments and everything in between.
             </p>
             <div class="chip-row">
-                <div class="chip accent">Competitive Integrity</div>
+                <div class="chip accent">League Constitution</div>
                 <div class="chip">Anti-Gooning Policy</div>
-                <div class="chip">Rookie Regulations</div>
-                <div class="chip">Last Place Punishment</div>
+                <div class="chip">Rookie Rules</div>
+                <div class="chip">Last Place Punishments</div>
             </div>
         </div>
         <div class="download-wrap">
@@ -318,7 +325,13 @@
                 <span class="icon">⬇️</span>
                 <span>Download Full Constitution (PDF)</span>
             </a>
-            <div class="download-hint">Opens the full, signed master copy.</div>
+            <p class="download-hint">Opens the full, signed master copy.</p>
+
+            <a class="download-btn secondary" href="hof.html">
+                <span class="icon">🏆</span>
+                <span>View Hall of Fame</span>
+            </a>
+            <p class="download-hint">See every champion since 2020.</p>
         </div>
     </div>
 
@@ -341,127 +354,100 @@
                 <li><a href="#art11">XI – Integrity & Last Place</a></li>
                 <li><a href="#art12">XII – Disputes & Amendments</a></li>
                 <li><a href="#art13">XIII – Certification</a></li>
-                <li><a href="#hof">Hall of Champions</a></li>
+                <li><a href="hof.html">Hall of Fame</a></li>
             </ul>
         </aside>
 
         <!-- MAIN CONTENT -->
         <main class="main-card">
-            <!-- You can tweak these summaries however you like.
-                 The full, detailed legal version lives in the PDF. -->
+            <!-- These are short summaries; full legal text is in the PDF -->
 
             <section class="article" id="art1">
                 <div class="article-code">ARTICLE I</div>
                 <h2>Purpose & Authority</h2>
-                <p><strong>1.1</strong> The FFF League exists to deliver a structured, competitive, and entertaining fantasy football experience while preserving fairness, integrity, and maximum levels of degenerate fun.</p>
-                <p><strong>1.2</strong> This Constitution is the supreme law of the League and overrides any side deals, random text messages, or “jokes” that conflict with it.</p>
-                <p class="muted"><strong>TL;DR:</strong> This document is the law. By joining, you agree to play by it.</p>
+                <p><strong>1.1 (A–D)</strong> The FFF League exists to provide a structured, competitive, and entertaining fantasy football experience while preserving fairness, integrity, and maximum levels of degenerate fun. This Constitution is the supreme governing document and overrides random group chat “deals” or jokes.</p>
+                <p class="muted"><strong>TL;DR:</strong> This document is the law. Joining the league means you agree to this.</p>
             </section>
 
             <section class="article" id="art2">
                 <div class="article-code">ARTICLE II</div>
                 <h2>Definitions</h2>
-                <p><strong>2.1</strong> Defines key terms like “League,” “Member,” “Commissioner,” “Season,” “Rookie,” “Gooning” (shady draft manipulation), and “Under-the-Table Trade” (real-life bribery for fantasy players).</p>
+                <p><strong>2.1 (A–H)</strong> Defines key terms like “League,” “Member,” “Commissioner,” “Season,” “Rookie,” “Gooning” (shady draft manipulation), “Under-the-Table Trade” (real-life bribery), and “Last Place Punishment.”</p>
                 <p class="muted">If you’re confused about what something means, it’s probably defined here or in the PDF.</p>
             </section>
 
             <section class="article" id="art3">
                 <div class="article-code">ARTICLE III</div>
                 <h2>Membership</h2>
-                <p><strong>3.1–3.3</strong> Explains who can be in the League, how you stay in good standing (pay dues, set lineups, participate), and how you can be removed for being a problem, a ghost, or a non-paying clown.</p>
+                <p><strong>3.1–3.3</strong> Explains who can join, what counts as a Member in good standing (pay dues, agree to the Constitution, set lineups), and how someone can be removed for ghosting, sabotaging, or refusing punishments.</p>
             </section>
 
             <section class="article" id="art4">
                 <div class="article-code">ARTICLE IV</div>
                 <h2>Commissioner & Governance</h2>
-                <p><strong>4.1–4.3</strong> The Commissioner runs the League, enforces rules, announces deadlines, and can be overruled only by a two-thirds vote. Reasonable bias is tolerated; blatant cheating is not.</p>
+                <p><strong>4.1–4.3</strong> The Commissioner is the chief authority: interprets rules, enforces them, settles disputes, announces draft time, fees, and rule tweaks. A 2/3 vote of the league can overturn a ruling. Reasonable bias is tolerated; blatant cheating is not.</p>
             </section>
 
             <section class="article" id="art5">
                 <div class="article-code">ARTICLE V</div>
                 <h2>Draft Administration</h2>
-                <p><strong>5.1–5.4</strong> Covers when and where the draft happens, live vs. remote drafting, drinking expectations, breathalyzer checks, and the hard rule: <strong>NO GOONING</strong>. If shady draft behavior is detected, picks and trades can be rewound or penalized.</p>
+                <p><strong>5.1–5.4</strong> Covers when/where the draft happens, live vs remote drafting, drinking expectations, breathalyzer checks, and the hard rule: <strong>NO GOONING</strong>. If shady behavior is detected, the Commissioner can rewind picks, reverse trades, or penalize future draft position.</p>
             </section>
 
             <section class="article" id="art6">
                 <div class="article-code">ARTICLE VI</div>
                 <h2>Trades</h2>
-                <p><strong>6.1–6.4</strong> Trades go through the platform or must be clearly written. Suspicious trades can be voted on or vetoed by the League, and the Commissioner can step in fast if something is obviously tanking or collusive. Under-the-table trades involving money or favors are banned and can get you kicked out.</p>
+                <p><strong>6.1–6.4</strong> Trades must be clearly communicated, go through the platform, and can be reviewed or vetoed by the league. Suspicious, tanking, or obviously lopsided deals can be reversed. Under-the-table trades involving money, food, favors, etc., are banned and can get you disqualified and kicked from the league.</p>
             </section>
 
             <section class="article" id="art7">
                 <div class="article-code">ARTICLE VII</div>
                 <h2>Payments & Financial Regulations</h2>
-                <p><strong>7.1–7.3</strong> Sets buy-in rules, payment deadlines, prize distribution, deductions for unpaid debts, and what happens if someone never pays. Chronic non-payers can be permanently banned and clowned on forever.</p>
+                <p><strong>7.1–7.3</strong> Buy-in amount and extra fees (rookie fee, trophy fund, etc.) are announced before the season. You must pay by draft time to be prize-eligible. Payout structure is set before Week 1. Non-payers can lose winnings, be banned, and get infinite “broke boy” slander.</p>
             </section>
 
             <section class="article" id="art8">
                 <div class="article-code">ARTICLE VIII</div>
                 <h2>Rookie Regulations</h2>
-                <p><strong>8.1–8.2</strong> Rookies may get a different buy-in. If a Rookie wins the League in their first season, they only receive half the normal champion’s payout; the other half rolls into next season’s pot. They still get full credit as champion and unlimited trash-talk rights.</p>
+                <p><strong>8.1–8.2</strong> A Rookie is anyone in their first season of the FFF League. The Commissioner can set rookie fees or reduced buy-ins. If a Rookie wins in their first year, they get only half of the normal champion payout; the other half rolls into next year’s pot. They still get full champion credit and trash-talk rights.</p>
             </section>
 
             <section class="article" id="art9">
                 <div class="article-code">ARTICLE IX</div>
                 <h2>Lineups & Weekly Obligations</h2>
-                <p><strong>9.1–9.2</strong> Every Member must set a legit lineup weekly. If you ghost your team, the Commissioner can fix your lineup to keep things fair for everyone else and may hit you with penalties for repeat offenses.</p>
+                <p><strong>9.1–9.2</strong> Every Member must set a reasonable lineup each week. If you abandon your team, the Commissioner can set it for you to keep things fair for your opponents. Repeat offenders can be fined, lose draft position, or be banned from future seasons.</p>
             </section>
 
             <section class="article" id="art10">
                 <div class="article-code">ARTICLE X</div>
                 <h2>Waivers & Free Agency</h2>
-                <p><strong>10.1–10.2</strong> Covers how waivers are run (rolling, FAAB, etc.) and bans coordinated drop/pickup schemes meant to hand players to friends. Shady patterns can be investigated and reversed.</p>
+                <p><strong>10.1–10.2</strong> The league uses the platform’s waiver system (rolling, FAAB, etc.) as chosen before the season. Coordinated “I’ll drop him so you can pick him up” moves are banned. Suspicious patterns can be investigated and reversed.</p>
             </section>
 
             <section class="article" id="art11">
                 <div class="article-code">ARTICLE XI</div>
                 <h2>Competitive Integrity & Last Place Punishment</h2>
-                <p><strong>11.1–11.3</strong> No tanking, no quitting, no giving up. Last place must complete the official punishment (embarrassing but not dangerous or illegal). Refusing the punishment = automatic removal and permanent clown status.</p>
+                <p><strong>11.1–11.3</strong> No tanking, no giving up because your team is cooked. Last place must complete the official punishment (embarrassing but not dangerous or illegal). Refusing the punishment = automatic removal and permanent clown status in league history.</p>
             </section>
 
             <section class="article" id="art12">
                 <div class="article-code">ARTICLE XII</div>
-                <h2>Disputes, Rule Changes, Amendments</h2>
-                <p><strong>12.1–12.2</strong> Disputes go to the Commissioner first, with time limits for scoring complaints. Rule changes and amendments require at least a two-thirds majority and normally apply starting next season.</p>
+                <h2>Disputes, Rule Changes & Amendments</h2>
+                <p><strong>12.1–12.2</strong> Disputes go to the Commissioner first and must be raised within the time limits (e.g., 48 hours or before stat corrections lock). Rule changes and amendments require at least a 2/3 majority and usually kick in starting next season.</p>
             </section>
 
             <section class="article" id="art13">
                 <div class="article-code">ARTICLE XIII</div>
                 <h2>Certification & Acceptance</h2>
-                <p><strong>13.1–13.2</strong> By paying, drafting, or playing, each Member accepts all terms, punishments, and humiliation in the Constitution. The signed PDF counts as the official master copy.</p>
+                <p><strong>13.1–13.2</strong> By drafting, paying, or playing, every Member accepts all terms and punishments in the Constitution. The PDF stored here counts as the official master copy, certified by the Commissioner.</p>
                 <p class="footnote">
-                    For the full legal wording, signatures, and every clause exactly as ratified by the Commissioner,
-                    read the <a class="inline-link" href="FFF_FULL_MASTER_CONSTITUTION_FULLTEXT.pdf" target="_blank">official PDF version</a>.
+                    For the full, word-for-word legal version with all clauses and signatures, see the
+                    <a class="inline-link" href="FFF_FULL_MASTER_CONSTITUTION_FULLTEXT.pdf" target="_blank">official PDF constitution</a>.
                 </p>
-            </section> 
-            <!-- HALL OF CHAMPIONS -->
-<section class="article" id="hof">
-    <div class="article-code">HALL OF CHAMPIONS</div>
-    <h2>FFF League Hall of Fame</h2>
-    <p class="muted">The immortalized legends of the league — forever documented, forever talked about, forever hated or respected.</p>
-
-    <div style="
-        margin-top: 14px; 
-        border: 1px solid rgba(148,163,184,0.4); 
-        border-radius: 12px; 
-        padding: 14px 16px; 
-        background: rgba(15,23,42,0.55); 
-        backdrop-filter: blur(4px);
-    ">
-        <p><strong>2020:</strong> Zandy Vasilou — <em>Epstien Islanders</em></p>
-        <p><strong>2021:</strong> Ryan Kilbride — <em>Raiders Are Ass</em></p>
-        <p><strong>2022:</strong> Patrick Jones — <em>Pimpin Aint Breezy</em></p>
-        <p><strong>2023:</strong> Patrick Jones — <em>Jamies Crab Shack</em></p>
-        <p><strong>2024:</strong> Argentto Tavizon — <em>Ruggs Race Crew</em></p>
-    </div>
-
-    <p class="footnote">
-        More champions will be added as new legends are crowned and old ones fall off.
-    </p>
-</section>
-
+            </section>
         </main>
     </div>
 </div>
 </body>
 </html>
+
