@@ -3,104 +3,65 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fantasy For Fags – League Constitution</title>
+    <title>Fantasy For Fags – Official League Hub</title>
 
     <style>
         :root {
             --bg: #050815;
             --bg-card: #111827;
-            --bg-card-soft: #0b1220;
-            --accent: #3b82f6;
-            --accent-soft: rgba(59,130,246,0.25);
-            --accent-strong: #60a5fa;
             --text-main: #e5e7eb;
             --text-muted: #9ca3af;
-            --border-subtle: #1f2937;
-            --danger: #f97373;
+            --accent: #3b82f6;
+            --gold: #facc15;
         }
-
-        * { box-sizing: border-box; }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-family: system-ui, sans-serif;
             background: radial-gradient(circle at top, #1f2937 0, #020617 50%, #000 100%);
             color: var(--text-main);
         }
 
         .page {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 24px 16px 40px;
         }
 
-        /* HEADER CARD */
+        /* HEADER */
         .header-card {
-            background: linear-gradient(135deg, #020617 0%, #0b1120 40%, #111827 100%);
+            background: linear-gradient(135deg, #020617, #0b1120 50%, #111827 100%);
             border-radius: 20px;
-            padding: 20px 24px;
+            padding: 22px;
             border: 1px solid rgba(148,163,184,0.35);
             box-shadow: 0 25px 60px rgba(0,0,0,0.8);
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-
-        .logo-wrap {
-            width: 75px;
-            height: 75px;
-            border-radius: 18px;
-            background: radial-gradient(circle at 30% 20%, #ffffff 0, #e5e7eb 22%, #111827 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            text-align: center;
         }
 
         .logo-wrap img {
-            width: 90%;
-            height: 90%;
-            object-fit: contain;
+            width: 85px;
+            height: auto;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 5vw, 38px);
+            margin: 6px 0 10px;
+            letter-spacing: 0.05em;
         }
 
         .league-tag {
             display: inline-flex;
-            align-items: center;
             gap: 6px;
-            background: rgba(15,23,42,0.9);
+            align-items: center;
+            background: rgba(15,23,42,0.85);
+            padding: 5px 14px;
             border-radius: 999px;
-            padding: 4px 12px;
             border: 1px solid rgba(148,163,184,0.5);
             color: var(--text-muted);
-            font-size: 11px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .league-tag-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 999px;
-            background: #22c55e;
-            box-shadow: 0 0 10px rgba(34,197,94,0.8);
-        }
-
-        h1 {
-            margin: 6px 0 2px;
-            font-size: clamp(28px, 5vw, 36px);
-            letter-spacing: 0.08em;
-        }
-
-        .subtitle {
-            margin: 0;
-            color: var(--text-muted);
-            font-size: 13px;
-        }
-
-        /* BUTTONS */
-        .download-wrap {
-            margin-top: 12px;
+            font-size: 12px;
+            margin-bottom: 14px;
         }
 
         .download-btn {
@@ -108,72 +69,58 @@
             align-items: center;
             gap: 8px;
             padding: 10px 18px;
-            border-radius: 999px;
-            border: 1px solid rgba(148,163,184,0.6);
-            background: radial-gradient(circle at top left, rgba(59,130,246,0.25), rgba(15,23,42,0.95));
-            color: #f9fafb;
-            font-size: 13px;
+            background: rgba(59,130,246,0.25);
+            border: 1px solid rgba(148,163,184,0.4);
+            border-radius: 12px;
+            color: white;
             text-decoration: none;
-            font-weight: 500;
-            box-shadow: 0 10px 30px rgba(15,23,42,0.8);
-            margin-bottom: 10px;
+            font-size: 14px;
+            margin-top: 10px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.6);
         }
 
-        .download-btn.secondary {
-            background: rgba(15,23,42,0.95);
-        }
-
-        .download-hint {
-            margin-top: -8px;
-            margin-bottom: 10px;
-            color: var(--text-muted);
-            font-size: 11px;
-        }
-
-        /* SIDEBAR */
-        .sidebar {
-            margin-top: 22px;
-            padding: 16px;
-            background: var(--bg-card);
-            border-radius: 16px;
-            border: 1px solid var(--border-subtle);
-        }
-
-        .nav-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-list li {
-            margin-bottom: 8px;
-        }
-
-        .nav-list a {
-            color: var(--accent-strong);
-            text-decoration: none;
-            font-size: 13px;
-        }
-
-        /* MAIN CARD */
-        .main-card {
-            margin-top: 20px;
+        /* HALL OF FAME SECTION */
+        .hof-card {
+            margin-top: 30px;
             background: var(--bg-card);
             border-radius: 18px;
-            border: 1px solid var(--border-subtle);
-            padding: 20px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.8);
+            border: 1px solid rgba(148,163,184,0.3);
+            padding: 24px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.7);
         }
 
-        .section-title {
-            font-size: 18px;
-            color: var(--accent-strong);
+        .hof-card h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+            text-align: center;
         }
 
-        .section-body {
-            font-size: 14px;
-            line-height: 1.55;
-            color: var(--text-main);
+        .champ {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .champ:last-child {
+            border-bottom: none;
+        }
+
+        .champ-year {
+            font-weight: 700;
+            color: var(--gold);
+            min-width: 60px;
+        }
+
+        .champ-name {
+            font-weight: 600;
+        }
+
+        .champ-team {
+            color: var(--text-muted);
+            font-size: 13px;
         }
     </style>
 </head>
@@ -187,86 +134,63 @@
             <img src="fff-logo.png" alt="FFF Logo">
         </div>
 
-        <div class="header-text-main">
-            <div class="league-tag">
-                <span class="league-tag-dot"></span>
-                FFF LEAGUE • EST. 2020
-            </div>
+        <div class="league-tag">
+            FFF LEAGUE • EST. 2020
+        </div>
 
-            <h1>FANTASY FOR FAGS</h1>
-            <p class="subtitle">Official Constitution – Updated Rules, Policies & League Structure</p>
+        <h1>FANTASY FOR FAGS</h1>
 
-            <div class="download-wrap">
+        <a class="download-btn" href="FFF_FULL_MASTER_CONSTITUTION_FULLTEXT.pdf" target="_blank">
+            ⬇️ Download Full Constitution (PDF)
+        </a>
+    </div>
 
-                <!-- DOWNLOAD PDF BUTTON -->
-                <a class="download-btn" 
-                   href="FFF_FULL_MASTER_CONSTITUTION_FULLTEXT.pdf" 
-                   target="_blank">
-                    <span class="icon">⬇️</span>
-                    <span>Download Full Constitution (PDF)</span>
-                </a>
-                <div class="download-hint">Opens the full, signed master copy.</div>
+    <!-- HALL OF FAME -->
+    <div class="hof-card">
+        <h2>🏆 HALL OF FAME – CHAMPIONS 🏆</h2>
 
-                <!-- HALL OF FAME BUTTON (FIXED) -->
-                <a class="download-btn secondary" href="/FFF-league-site/hof.html">
-                    <span class="icon">🏆</span>
-                    <span>View Hall of Fame</span>
-                </a>
-                <div class="download-hint">Champions from 2020–Present</div>
+        <div class="champ">
+            <div class="champ-year">2020</div>
+            <div>
+                <div class="champ-name">Zandy Vasilou</div>
+                <div class="champ-team">Epstien Islanders</div>
             </div>
         </div>
-    </div>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <ul class="nav-list">
-            <li><a href="#article1">Article I – League Basics</a></li>
-            <li><a href="#article2">Article II – Draft Rules</a></li>
-            <li><a href="#article3">Article III – Trades</a></li>
-            <li><a href="#article4">Article IV – Waivers</a></li>
-            <li><a href="#article5">Article V – Playoffs</a></li>
-            <li><a href="/FFF-league-site/hof.html">Hall of Fame</a></li>
-        </ul>
-    </div>
+        <div class="champ">
+            <div class="champ-year">2021</div>
+            <div>
+                <div class="champ-name">Ryan Kilbride</div>
+                <div class="champ-team">Raiders Are Ass</div>
+            </div>
+        </div>
 
-    <!-- MAIN CONTENT CARD -->
-    <div class="main-card" id="article1">
-        <h2 class="section-title">Article I – League Basics</h2>
-        <p class="section-body">
-            This constitution governs the Fantasy For Fags league. All members are expected to read and follow
-            all rules, policies, and guidelines listed herein. Updates to rules must be approved by league
-            leadership or a majority vote unless otherwise stated.
-        </p>
-    </div>
+        <div class="champ">
+            <div class="champ-year">2022</div>
+            <div>
+                <div class="champ-name">Patrick Jones</div>
+                <div class="champ-team">Pimpin Aint Breezy</div>
+            </div>
+        </div>
 
-    <div class="main-card" id="article2">
-        <h2 class="section-title">Article II – Draft Rules</h2>
-        <p class="section-body">
-            Detailed draft rules go here...
-        </p>
-    </div>
+        <div class="champ">
+            <div class="champ-year">2023</div>
+            <div>
+                <div class="champ-name">Patrick Jones</div>
+                <div class="champ-team">Jamies Crab Shack</div>
+            </div>
+        </div>
 
-    <div class="main-card" id="article3">
-        <h2 class="section-title">Article III – Trades</h2>
-        <p class="section-body">
-            Trade rules go here...
-        </p>
-    </div>
-
-    <div class="main-card" id="article4">
-        <h2 class="section-title">Article IV – Waivers</h2>
-        <p class="section-body">
-            Waiver rules go here...
-        </p>
-    </div>
-
-    <div class="main-card" id="article5">
-        <h2 class="section-title">Article V – Playoffs</h2>
-        <p class="section-body">
-            Playoff rules go here...
-        </p>
+        <div class="champ">
+            <div class="champ-year">2024</div>
+            <div>
+                <div class="champ-name">Argentto Tavizon</div>
+                <div class="champ-team">Ruggs Race Crew</div>
+            </div>
+        </div>
     </div>
 
 </div>
 </body>
 </html>
+
